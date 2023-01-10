@@ -24,6 +24,7 @@ importers:
       chalk: ^4.1.0
       conventional-changelog-cli: ^2.0.31
       csstype: ^3.0.3
+      cz-git: ^1.4.1
       enquirer: ^2.3.2
       esbuild: ^0.15.13
       eslint: ^7.7.0
@@ -76,6 +77,7 @@ importers:
       chalk: 4.1.2
       conventional-changelog-cli: 2.1.1
       csstype: 3.0.10
+      cz-git: 1.4.1
       enquirer: 2.3.6
       esbuild: 0.15.13
       eslint: 7.32.0
@@ -2609,6 +2611,10 @@ packages:
 
   /csstype/3.0.10:
     resolution: {integrity: sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==}
+    dev: true
+
+  /cz-git/1.4.1:
+    resolution: {integrity: sha512-EOtuitcnfxde8t3NNTKh2YxEJhLXGiVlKSVaZipK3+DVo135rEUifAfqxkslM66Nf6ZO7a+3JR+XAOLhMXUAjQ==}
     dev: true
 
   /dargs/7.0.0:

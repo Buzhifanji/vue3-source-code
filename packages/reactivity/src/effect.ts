@@ -175,12 +175,18 @@ export function effect<T = any>(
     fn = (fn as ReactiveEffectRunner).effect.fn
   }
 
+  // 1.生成 ReactiveEffect 实例
   const _effect = new ReactiveEffect(fn)
   if (options) {
     extend(_effect, options)
     if (options.scope) recordEffectScope(_effect, options.scope)
   }
   if (!options || !options.lazy) {
+    // 2.触发包裹的函数执行，从而激活 getter
+    // 3.建立 targetMap 和 activeEffect 之间的联系
+
+    // 1. 函数执行 触发 targetMap 中的 getter， getter 执行会触发 track 收集依赖: dep.add(activeEffect)
+    // 2. targetMap 数据变更会触发 setter, setter 执行会触发 trigger 更新依赖：执行 dep里 存储的fn
     _effect.run()
   }
   const runner = _effect.run.bind(_effect) as ReactiveEffectRunner

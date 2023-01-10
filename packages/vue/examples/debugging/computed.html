@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>computed</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="../../dist/vue.global.js"></script>
+</body>
+<script>
+  const { reactive, effect, computed} = Vue
+  
+  const obj = reactive({
+    name: 'li'
+  })
+
+  const computedObj = computed(() => {
+    return 'name: ' + obj.name
+  })
+
+  effect(() => {
+    document.querySelector('#app').innerText = computedObj.value
+  })
+
+  setTimeout(() => {
+    obj.name = 'ming'
+  }, 2000)
+</script>
+</html>

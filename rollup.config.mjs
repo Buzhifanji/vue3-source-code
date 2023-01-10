@@ -104,7 +104,7 @@ function createConfig(format, output, plugins = []) {
   const isCompatBuild = !!packageOptions.compat
 
   output.exports = isCompatPackage ? 'auto' : 'named'
-  output.sourcemap = !!process.env.SOURCE_MAP
+  output.sourcemap = !!process.env.SOURCE_MAP // 控制是否开启 sourcemap
   output.externalLiveBindings = false
 
   if (isGlobalBuild) {
